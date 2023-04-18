@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function generarCaracteres(n, caracter) {
+
+            n = parseInt(n);
+
+            var cadena = '';
+            for (var i = 0; i < n; i++) {
+                cadena += caracter;
+            }
+
+            return cadena;
+        }
+
+        var n = prompt('Ingrese un número entero:');
+        var caracter = prompt('Ingrese un carácter:');
+        var resultado = generarCaracteres(n, caracter);
+
+        alert('El resultado es: ' + resultado);
+    </script>
+</body>
+
+</html>

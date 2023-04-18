@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcularTension(I, R) {
+            var V = I * R;
+            return V;
+        }
+
+        function calcularIntensidad(V, R) {
+            var I = V / R;
+            return I;
+        }
+
+        function calcularResistencia(V, I) {
+            var R = V / I;
+            return R;
+        }
+
+        var opcion = prompt('Ingrese la letra correspondiente a la opción deseada:\na. Calcular tensión eléctrica\nb. Calcular intensidad de la corriente eléctrica\nc. Calcular resistencia eléctrica');
+
+        var numero1 = parseInt(prompt('Ingrese el primer número:'));
+        var numero2 = parseInt(prompt('Ingrese el segundo número:'));
+
+        if (opcion === 'a') {
+            var V = calcularTension(numero1, numero2);
+            alert('La Tensión eléctrica es: ' + V + 'V');
+        } else if (opcion === 'b') {
+            var I = calcularIntensidad(numero1, numero2);
+            alert('La Intensidad de la corriente eléctrica es: ' + I + 'A');
+        } else if (opcion === 'c') {
+            var R = calcularResistencia(numero1, numero2);
+            alert('La Resistencia eléctrica es: ' + R + 'Ω');
+        } else {
+            alert('Opción inválida.');
+        }
+    </script>
+</body>
+
+</html>

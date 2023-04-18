@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reloj</title>
+    <script>
+        function obtenerFecha() {
+            hoy = new Date();
+            fecha = "" + (hoy.getMonth() + 1) + " / " + hoy.getDate() + " / " + (hoy.getYear() + 1900)
+            document.getElementsByName("Fecha")[0].value = fecha;
+
+        }
+
+        var temporizadorID = null;
+        var temporizadorMarcha = false;
+
+        function iniciarReloj() {
+            obtenerFecha()
+            tiempoFuncion();
+        }
+
+        function tiempoFuncion() {
+            var ahora = new Date();
+            var hora = ahora.getHours();
+            var minutos = ahora.getMinutes();
+            var segundos = ahora.getSeconds()
+            var timeValue = "" + ((hora > 12) ? hora - 12 : hora)
+
+            timeValue += ((minutos < 10) ? ":0" : ":") + minutos
+            timeValue += ((segundos < 10) ? ":0" : ":") + segundos
+            timeValue += (hora >= 12) ? " P.M." : " A.M."
+            document.getElementsByName("ver")[0].value = timeValue;
+
+            temporizadorID = setTimeout("tiempoFuncion()", 1000);
+            temporizadorMarcha = true;
+        }
+
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="iniciarReloj()">
+    <h1>Reloj hecho con JavaScript</h1>
+    <label for="fechaInput">Hoy es:</label>
+    <input type="text" id="fechaInput" name="Fecha" readonly>
+    <label for="horaInput">La hora es:</label>
+    <input type="text" id="horaInput" name="ver" readonly>
+</body>
+
+</html>

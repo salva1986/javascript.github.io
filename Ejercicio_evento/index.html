@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo de eventos en JavaScript</title>
+	<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+	<div>
+		<h1>Ejercicio Eventos JavaScript</h1>
+		<button id="boton" onclick="cambiarColor()">Cambiar color</button>
+	</div>
+
+	<form onsubmit="return validar()">
+		<label for="nombre">Nombre:   </label>
+		<input type="text" id="nombre" name="nombre" onkeyup="mostrarNombre()">
+		<br>
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" onblur="validarEmail()">
+		<br>
+		<label for="contrasena">Contraseña:  </label>
+		<input type="password" id="contrasena" name="contrasena" onkeydown="contarCaracteres()">
+		<br>
+		<label for="mensaje">Mensaje:</label>
+		<textarea id="mensaje" name="mensaje" onselect="mostrarSeleccion()"></textarea>
+		<br>
+		<input type="submit" value="Enviar" onclick="enviarFormulario()">
+	</form>
+
+	<script>
+		function cambiarColor() {
+			document.body.style.backgroundColor = "green";
+		}
+
+		function mostrarNombre() {
+			console.log("El nombre es: " + document.getElementById("nombre").value);
+		}
+
+		function validarEmail() {
+			var email = document.getElementById("email").value;
+			if (email.indexOf("@") == -1) {
+				alert("El email debe contener el caracter '@'");
+			}
+		}
+
+		function contarCaracteres() {
+			var contrasena = document.getElementById("contrasena").value;
+			console.log("La contraseña tiene " + contrasena.length + " caracteres");
+		}
+
+		function mostrarSeleccion() {
+			console.log("El usuario ha seleccionado el siguiente texto: " + document.getSelection());
+		}
+
+		function validar() {
+			var nombre = document.getElementById("nombre").value;
+			if (nombre == "") {
+				alert("Por favor ingrese su nombre");
+				return false;
+			} else {
+				alert("¡Gracias por enviar el formulario!");
+				return true;
+			}
+		}
+
+		function enviarFormulario() {
+			console.log("El formulario ha sido enviado");
+		}
+	</script>
+</body>
+</html>

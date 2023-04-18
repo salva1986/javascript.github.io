@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="iniciar()">
+    <h2>Calendario JS</h2>
+
+    <form name="frmCalendario_sup">
+
+        <select name="cbMes" class=textocalendario onchange="cambiaCalendario()">
+            <script>
+                for (var i = 1; i <= 12; i++) {
+                    var strSelected = "";
+                    if (i == mes) strSelected = "SELECTED"
+                    document.write("<OPTION value=" + i + " " + strSelected + ">" + getNombreMes(i));
+                }
+            </script>
+        </select>
+        <select name="cbAnno" class=textocalendario onchange="cambiaCalendario()">
+            <script>
+                for (var i = anno - 100; i <= anno + 10; i++) {
+                    var strSelected = "";
+                    if (i == anno) strSelected = "SELECTED"
+                    document.write("<OPTION value=" + i + " " + strSelected + ">" + i);
+                }
+            </script>
+            
+
+            <script src="index.js"></script>
+        </select>
+    </form>
+    
+    <table class="dias">
+        <tr>
+            <td class="diaN">L</td>
+            <td class="diaN">M</td>
+            <td class="diaN">M</td>
+            <td class="diaN">J</td>
+            <td class="diaN">V</td>
+            <td class="finS">S</td>
+            <td class="finS">D</td>
+        </tr>
+    </table>
+    <table id="tablacalendario">
+        <tr></tr>
+    </table>  
+      
+
+</body>    
+
+</html>

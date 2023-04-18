@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function calcularM(mm){
+            var m = mm/1000;
+            return m;
+        }
+
+        function calcularCM(cm){
+            var m = cm/100;
+            return m;
+        }
+
+        function calcularMC(m){
+            var cm = m * 100;
+            return cm;
+        }
+
+        function calcularMM(m){
+            var mm = m * 1000
+            return mm;
+        }
+
+        var opcion = prompt('Ingrese la letra correspondiente a la opción deseada:\na. Calcular de milimetrosd a metros\nb. Calcular de centimetros a metros\nc. Calcular de metros a centimetros\nd. Calcular de Metros a Milimetros');
+
+        var numero1 = prompt('Ingrese el numero que desea convertir');
+
+        if (opcion === 'a'){
+            var M = calcularM(numero1);
+            alert('El total es: ' + M + ' Metros')
+        }else if (opcion === 'b'){
+            var M2 = calcularCM(numero1);
+            alert('El total es: ' + M2 + ' Metros')
+        } else if(opcion === 'c'){
+            var CM = calcularMC(numero1);
+            alert('El total es: ' + CM + ' Centimetros')
+        } else if(opcion === 'd'){
+            var MM = calcularMM(numero1);
+            alert ('El total es: ' + MM + ' Milimetros')
+        } else {
+            alert('Opcion invalida')
+        }
+
+    </script>
+</body>
+
+</html>

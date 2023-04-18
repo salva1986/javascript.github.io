@@ -1,0 +1,28 @@
+body{
+    height: 500px;
+    background: linear-gradient(45deg, papayawhip 50%, lightblue 50%);
+}
+
+h1{
+    text-align: center;
+    text-decoration: dotted;
+}
+
+.fecha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+p{
+    font-size: 50px;
+    text-align: center;
+    padding: 5px;
+}
+
+#mes{
+    font-size: 80px;
+    color: red;
+}

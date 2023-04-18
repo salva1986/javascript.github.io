@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div id="calculadora"></div>
+    <script type="text/javascript">
+        var calculadora = document.getElementById("calculadora");
+    
+        //pantalla de la calculadora
+        var pantalla = document.createElement("div");
+        pantalla.id = "pantalla";
+        calculadora.appendChild(pantalla);
+    
+        //botones de la calculadora
+        var botones = ["7", "8", "9", "/", "4", "5", "6", "*", "1", "2", "3", "-", "0", ".", "=", "+", "C"];
+        for (var i = 0; i < botones.length; i++) {
+            var boton = document.createElement("button");
+            boton.innerHTML = botones[i];
+            boton.onclick = function () {
+                calcular(this.innerHTML);
+            };
+            calculadora.appendChild(boton);
+        }
+    
+        function calcular(valor) {
+            var pantalla = document.getElementById("pantalla");
+            if (valor == "=") {
+                pantalla.innerHTML = eval(pantalla.innerHTML);
+            } else if (valor == "C") {
+                pantalla.innerHTML = "";
+            } else {
+                pantalla.innerHTML += valor;
+            }
+        }
+    </script>
+</body>
+
+</html>

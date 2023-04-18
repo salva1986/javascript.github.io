@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    zoom: 125%;
+}
+
+
+.dias td{
+    padding: 3.2px;
+    font-weight: bold;
+}
+
+.dias{
+    border: 2px #CF1974 solid;    
+}
+
+#tablacalendario{
+    border: 2px #CF1974 solid;
+}
+
+.diaN{
+    background-color: #3B84BD;
+    color:white
+}
+
+.finS{
+    background-color: #19BAE1;
+    color: #F75E00;
+}
+
+.textocalendario{
+    color: #3B84BD;
+}
+
+.textofestivo{
+    color: #F75E00;
+}
